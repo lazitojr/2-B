@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>ESTOQUE</title>
+    <style>
+        body {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px
+            background-color: rgb(243, 212, 212);
+        }
+        h2 {
+            color: rgb(29, 223, 223);
+
+        }
+        table{
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc; 
+
+        }
+
+        th, td{
+            padding: 8px;
+            text-align: left;
+        }
+        th{
+            background-color: rgb(162, 170, 170);
+
+        }
+
+        fieldset{
+            max-width: 800px;
+            background-color: rgb(240, 240, 240);
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        fieldset table {
+            width: 100%;
+            border: none;
+        }
+
+        fieldset table td {
+            padding: 8px;
+            border: 5px;
+
+        }
+        input[type="text"], input[type="number"],input[type="date"]{
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: rgb(53, 146, 16);
+        }
+
+        input[type="reset"] {
+            background-color: rgb(133, 19, 44);
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(22, 206, 22);
+        }
+        input[type="reset"]:hover{
+            background-color: rgb(196, 110, 110);
+        }
+    
+        body > table {
+            font-family: sa;
+            border: 5px solid;
+            padding: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Tabela de estoque de Produtos</h2>
+    <table>
+    <thead>
+        <tr>
+            <th style="border: 2px solid; padding: 10px;">Código do Produto</th>
+            <th style="border: 2px solid; padding: 10px;">Nome do Produto</th>
+            <th style="border: 2px solid; padding: 10px;">Categoria</th>
+            <th style="border: 2px solid; padding: 10px;">Preço (R$)</th>
+            <th style="border: 2px solid; padding: 10px;">Disponibilidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0201</td>
+            <td>Paracetamol</td>
+            <td>Analgésico</td>
+            <td>5,00</td>
+            <td>Em estoque</td>
+        </tr>
+        <tr>
+            <td>0703</td>
+            <td>Ibuprofeno</td>
+            <td>Analgésico</td>
+            <td>7,50</td>
+            <td>Em estoque</td>
+        </tr>
+        <tr>
+            <td>0004</td>
+            <td>Antibiótico Amoxicilina</td>
+            <td>Antibiótico</td>
+            <td>15,00</td>
+            <td>Em estoque</td>
+        </tr>
+        <tr>
+            <td>0306</td>
+            <td>Vitamina C</td>
+            <td>Suplemento</td>
+            <td>20,00</td>
+            <td>Em estoque</td>
+        </tr>
+        <tr>
+            <td>0002</td>
+            <td>Benadryl</td>
+            <td>Antialérgico</td>
+            <td>12,00</td>
+            <td>Fora de estoque</td>
+        </tr>
+        <tr>
+            <td>0008</td>
+            <td>Creme Hidratante</td>
+            <td>Cuidado com a pele</td>
+            <td>30,00</td>
+            <td>Em estoque</td>
+        </tr>
+        <tr>
+            <td>0005</td>
+            <td>Termômetro Digital</td>
+            <td>Equipamento</td>
+            <td>25,00</td>
+            <td>Em estoque</td>
+        </tr>
+        <tr>
+            <td>0012</td>
+            <td>Pomada para queimaduras</td>
+            <td>Tratamento</td>
+            <td>18,00</td>
+            <td>Em estoque</td>
+        </tr>
+        <tr>
+            <td>0126</td>
+            <td>Álcool em Gel</td>
+            <td>Desinfetante</td>
+            <td>10,00</td>
+            <td>Em estoque</td>
+        </tr>
+        <tr>
+            <td>0048</td>
+            <td>Ferro Suplementar</td>
+            <td>Suplemento</td>
+            <td>22,00</td>
+            <td>Fora de estoque</td>
+        </tr>
+    </tbody>
+</table>
+
+<form action="/cadastrar_estoque" method="post">
+    <fieldset>
+       
+        <legend >Cadastro de Produto</legend>
+
+        <table>
+            <tr>
+                <td style="font: 1em sans-serif;"><label for="codigo_produto">Código do Produto</label></td>
+                <td><input type="text" id="codigo_produto" name="codigo_produto" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="descriscao_produto">Descrição do Produto</label></td>
+                <td><input type="text" id="descriscao_produto" name="descriscao_produto" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="preco">Preço</label></td>
+                <td><input type="number" id="preco" step="0.01" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="quantidade">Quantidade</label></td>
+                <td><input type="number" id="quantidade" name="quantidade" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="data_atualizacao">Data de Atualização</label></td>
+                <td><input type="date" id="data_atualizacao" name="data_atualizacao" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                <input type="reset" value="limpar">
+                <input type="submit" value="Cadastrar">
+            </td>
+            </tr>
+            
+            
+        </table> 
+         
+
+
+    
+    </fieldset>
+    
+</form>
+
+    
+</body>
+</html>
